@@ -4,7 +4,7 @@
   "description": "XOAuth2 token generation for accessing GMail SMTP and IMAP",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "grunt test"
   },
   "repository": {
     "type": "git",
@@ -13,6 +13,13 @@
   "dependencies": {
     "amdefine": ">=0.0.8",
     "node-shims": "https://github.com/whiteout-io/node-shims/tarball/master"
+  },
+  "devDependencies": {
+    "mocha": "~1.12.0",
+    "chai": "~1.7.2",
+    "grunt": "~0.4.1",
+    "grunt-contrib-jshint": "~0.5.3",
+    "grunt-mocha-test": "~0.6.2"
   },
   "keywords": [
     "XOAUTH",

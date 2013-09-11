@@ -105,7 +105,7 @@ define(function(require) {
         },
             payload = querystring.stringify(urlOptions);
 
-        postRequest(this.options.accessUrl, payload, (function(error, response, body) {
+        postRequest(this.options.accessUrl, payload, function(error, response, body) {
             var data;
 
             if (error) {
@@ -117,7 +117,7 @@ define(function(require) {
                 return callback(E);
             }
 
-            if (!data || typeof data != "object") {
+            if (!data || typeof data !== "object") {
                 return callback(new Error("Invalid authentication response"));
             }
 
@@ -131,7 +131,7 @@ define(function(require) {
             }
 
             return callback(new Error("No access token"));
-        }).bind(this));
+        }.bind(this));
     };
 
     /**
@@ -175,7 +175,7 @@ define(function(require) {
             callback.apply(null, arguments);
         };
 
-        var req = (options.protocol == "https:" ? https : http).request(options, function(res) {
+        var req = (options.protocol === "https:" ? https : http).request(options, function(res) {
             response = res;
             var data = [];
 
@@ -198,7 +198,7 @@ define(function(require) {
 
         if (payload) {
             req.setHeader("Content-Type", "application/x-www-form-urlencoded");
-            req.setHeader("Content-Length", typeof payload == "string" ? Buffer.byteLength(payload) : payload.length);
+            req.setHeader("Content-Length", typeof payload === "string" ? Buffer.byteLength(payload) : payload.length);
         }
 
         req.end(payload);
