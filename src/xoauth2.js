@@ -5,8 +5,10 @@ if (typeof define !== 'function') {
 define(function(require) {
     "use strict";
 
-    var Stream = require("stream").Stream,
-        utillib = require("util"),
+    var shims = require('node-shims'),
+        Stream = shims.Stream.Stream,
+        Buffer = shims.Buffer.Buffer,
+        utillib = shims.util,
         querystring = require("querystring"),
         http = require("http"),
         https = require("https"),

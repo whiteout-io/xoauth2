@@ -1,7 +1,7 @@
 'use strict';
 
 var expect = require('chai').expect,
-    xoauth2 = require("./index"),
+    xoauth2 = require(".."),
     xoauth2gen;
 
 describe('xoauth', function() {
