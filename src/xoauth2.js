@@ -9,10 +9,10 @@ define(function(require) {
         Stream = shims.Stream.Stream,
         Buffer = shims.Buffer.Buffer,
         utillib = shims.util,
-        querystring = require("querystring"),
-        http = require("http"),
-        https = require("https"),
-        urllib = require("url");
+        querystring = shims.querystring,
+        http = shims.http,
+        https = shims.http,
+        urllib = shims.url;
 
     /**
      * Wrapper for new XOAuth2Generator.
