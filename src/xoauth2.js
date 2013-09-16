@@ -12,7 +12,8 @@ define(function(require) {
         querystring = shims.querystring,
         http = shims.http,
         https = shims.http,
-        urllib = shims.url;
+        urllib = shims.url,
+        xoauth2 = {};
 
     /**
      * Wrapper for new XOAuth2Generator.
@@ -27,7 +28,7 @@ define(function(require) {
      * @param {Object} options See XOAuth2Generator for details
      * @return {Object}
      */
-    module.exports.createXOAuth2Generator = function(options) {
+    xoauth2.createXOAuth2Generator = function(options) {
         return new XOAuth2Generator(options);
     };
 
@@ -206,5 +207,7 @@ define(function(require) {
         req.end(payload);
 
     }
+
+    return xoauth2;
 
 });
